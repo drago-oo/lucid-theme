@@ -976,8 +976,8 @@ ytmusic-player-page:not([video-mode]):not([is-video-truncation-fix-enabled])[pla
 
 ytmusic-player-page:not([video-mode]):not([is-video-truncation-fix-enabled])[player-fullscreened]:not([blyrics-dfs]) #player.ytmusic-player-page { 
   width: 100% !important;
-  max-width: 55vh !important; /* Replaced the min() function with a solid, responsive viewport height */
-  aspect-ratio: 1 !important; /* Single integer, no slash */
+  max-width: 55vh !important;
+  aspect-ratio: 1 !important;
   height: auto !important; 
   max-height: none !important; 
   border-radius: 16px !important; 
@@ -992,8 +992,8 @@ ytmusic-player-page[player-fullscreened]:not([video-mode]):not([blyrics-video-mo
 /* AUDIO MODE: Standard View */
 ytmusic-player-page:not([video-mode]):not([player-fullscreened]):not([blyrics-dfs]):not([player-ui-state="MINIPLAYER"]) #player.ytmusic-player-page { 
   width: 100% !important; 
-  max-width: 55vh !important; /* Replaced the min() function */
-  aspect-ratio: 1 !important; /* Single integer, no slash */
+  max-width: 55vh !important;
+  aspect-ratio: 1 !important;
   height: auto !important; 
   max-height: none !important; 
   margin: 0 auto !important; 
@@ -1008,7 +1008,7 @@ ytmusic-player-page[video-mode][player-fullscreened]:not([blyrics-dfs]) #player.
   min-width: 60vw !important; 
   max-width: 60vw !important; 
   flex-shrink: 0 !important; 
-  aspect-ratio: 1.7778 !important; /* The exact decimal equivalent of 16/9 */
+  aspect-ratio: 1.7778 !important;
   border-radius: 12px !important; 
   margin-top: 7vh !important; 
 }
