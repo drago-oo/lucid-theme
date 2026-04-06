@@ -7,17 +7,17 @@ A minimal theme that adds numerous improvements whilst keeping the original YTM 
 - **Immersive Artist Pages:** Removed the heavy native vignette gradients for a cleaner dissolve.
 - **Subtle Animations:** Fluid transitions throughout the UI.
 - **Bigger Videos:** Improved layout scaling for videos in video mode.
-- **No Lyrics Display:** Replaced `no lyrics found` text with a cleaner version.
+- **No Lyrics Display:** Replaced `No lyrics found` text with a cleaner version.
 
 
 ## Preview
 
 
-![Theme Preview](https://raw.githubusercontent.com/drago-oo/lucidtheme/990a6c63c16fb6951516fef01d629c440ac88c9b/Desktop2026.04.06-01.53.11.04_2.webp?token=GHSAT0AAAAAADZVORP4OQKB3I5AM37F36W62OSVD5A)
-![Home Page & Artist View](https://raw.githubusercontent.com/drago-oo/lucidtheme/refs/heads/main/2.png?token=GHSAT0AAAAAADZVORP5GHF3UYITUJCCBJPK2OSVGGQ)
-![No Lyrics Display & Footer](https://raw.githubusercontent.com/drago-oo/lucidtheme/refs/heads/main/3.png?token=GHSAT0AAAAAADZVORP4R4E32MP7HG35FRYC2OSVGPQ)
-![MV Preview](https://raw.githubusercontent.com/drago-oo/lucidtheme/refs/heads/main/4.png?token=GHSAT0AAAAAADZVORP5Y76QF3KHTNOPKMRM2OSVHDA)
-![Frosted Glass](https://raw.githubusercontent.com/drago-oo/lucidtheme/refs/heads/main/5.png?token=GHSAT0AAAAAADZVORP4GW5DQOS3UN2IIVAQ2OSVHOQ)
+![Theme Preview](https://raw.githubusercontent.com/drago-oo/lucid-theme/refs/heads/main/images/preview.webp)
+![Home Page & Artist View](https://github.com/drago-oo/lucid-theme/blob/main/images/2.png?raw=true)
+![No Lyrics Display & Footer](https://github.com/drago-oo/lucid-theme/blob/main/images/3.png?raw=true)
+![MV Preview](https://github.com/drago-oo/lucid-theme/blob/main/images/4.png?raw=true)
+![Frosted Glass](https://github.com/drago-oo/lucid-theme/blob/main/images/5.png?raw=true)
 
 ## Installation Notes
 
