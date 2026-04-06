@@ -11,7 +11,7 @@ A Premium Glass Theme for Better Lyrics
 
 ## Preview
 
-![Preview](images/preview.png)
+![Preview](images/preview.webp)
 
 ## License
 
