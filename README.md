@@ -7,7 +7,7 @@ A Premium Glass Theme for Better Lyrics
 1. Open Better Lyrics extension options
 2. Go to **Themes** tab
 3. Click **Install from URL**
-4. Enter: `https://github.com/drago-oo/my-theme`
+4. Enter: `https://github.com/drago-oo/lucid-theme`
 
 ## Preview
 
