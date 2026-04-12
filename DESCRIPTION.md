@@ -1,6 +1,6 @@
 A minimal theme that adds numerous improvements whilst keeping the original YTM feel.
 
-## v1.1.0 UPDATE
+## v1.1.0 Update
 
 - **Search Bar Blur:** Credits to zortas on Discord for finding an implementation to blur the background of search results.
 - **Search Results Page:** Subtle refinements to the overall page.
