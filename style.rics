@@ -408,16 +408,17 @@ ytmusic-two-row-item-renderer:hover ytmusic-thumbnail-renderer {
   box-shadow: 0 16px 32px rgba(0,0,0,0.5) !important; 
 }
 
-ytmusic-two-row-item-renderer .image-wrapper, 
-ytmusic-two-row-item-renderer yt-img-shadow, 
-.thumbnail-overlay { 
+/* Apply 12px squircle to Home Page grid, strictly excluding Circular Artists */
+ytmusic-two-row-item-renderer:not([aspect-ratio="MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_CIRCLE"]):not(:has([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"])) .image-wrapper,
+ytmusic-two-row-item-renderer:not([aspect-ratio="MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_CIRCLE"]):not(:has([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"])) yt-img-shadow,
+ytmusic-two-row-item-renderer:not([aspect-ratio="MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_CIRCLE"]):not(:has([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"])) .thumbnail-overlay { 
   border-radius: 12px !important; 
-  overflow: hidden !important; 
+  overflow: hidden !important;
 }
 
-/* Quick Picks & List Items */
-ytmusic-responsive-list-item-renderer:not(:has([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"])) yt-img-shadow, 
-ytmusic-responsive-list-item-renderer:not(:has([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"])) yt-img-shadow img { 
+/* Apply 10px squircle to Quick Picks, strictly excluding Circular Artists */
+ytmusic-responsive-list-item-renderer:not(:has([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"])):not([music-item-style="MUSIC_ITEM_STYLE_ARTIST"]) yt-img-shadow, 
+ytmusic-responsive-list-item-renderer:not(:has([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"])):not([music-item-style="MUSIC_ITEM_STYLE_ARTIST"]) yt-img-shadow img { 
   border-radius: 10px !important; 
   overflow: hidden !important;
 }
@@ -1753,18 +1754,41 @@ ytmusic-app-layout:has(ytmusic-search-box[opened])::after {
    ========================================= */
 
 /* 1. Force 16:9 Video Thumbnails to have rounded corners */
+ytmusic-top-result-item-renderer yt-img-shadow,
+ytmusic-responsive-list-item-renderer yt-img-shadow,
+ytmusic-card-shelf-renderer yt-img-shadow {
+    border-radius: 1px !important;
+    overflow: hidden !important;
+    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+}
+
 ytmusic-top-result-item-renderer yt-img-shadow img,
 ytmusic-responsive-list-item-renderer yt-img-shadow img,
 ytmusic-card-shelf-renderer yt-img-shadow img {
-    border-radius: 10px !important;
+    border-radius: 1px !important;
     height: auto !important; 
     max-height: 100% !important; 
 }
 
-/* 2. Style the Main "Play" and "Save" Action Buttons on Top Results */
+/* 2. OVERRIDE: Protect Playlists and Albums from the 16:9 shrink */
+ytmusic-responsive-list-item-renderer[music-item-style="MUSIC_ITEM_STYLE_PLAYLIST"] yt-img-shadow img,
+ytmusic-responsive-list-item-renderer[music-item-style="MUSIC_ITEM_STYLE_ALBUM"] yt-img-shadow img {
+    height: 100% !important; /* Forces 1:1 square items to stay square */
+}
+
+/* 3. OVERRIDE: Protect Artists (Restore Perfect Circles across all pages) */
+[thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"] yt-img-shadow,
+[thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"] yt-img-shadow img,
+ytmusic-responsive-list-item-renderer:has([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) yt-img-shadow,
+ytmusic-responsive-list-item-renderer:has([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) yt-img-shadow img {
+    border-radius: 50% !important;
+    -webkit-mask-image: none !important;
+    height: 100% !important; /* Reverts the height auto */
+}
+
+/* 4. Style the Main "Play" and "Save" Action Buttons on Top Results (Your Exact Code) */
 ytmusic-top-result-item-renderer .yt-spec-button-shape-next--filled,
 ytmusic-card-shelf-renderer .yt-spec-button-shape-next--filled {
-    /* The primary "Play" Button */
     background: rgba(255, 255, 255, 0.15) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important; 
@@ -1777,7 +1801,6 @@ ytmusic-top-result-item-renderer .yt-spec-button-shape-next--outline,
 ytmusic-top-result-item-renderer .yt-spec-button-shape-next--tonal,
 ytmusic-card-shelf-renderer .yt-spec-button-shape-next--outline,
 ytmusic-card-shelf-renderer .yt-spec-button-shape-next--tonal {
-    /* Secondary buttons (Save, Shuffle, etc.) */
     background: rgba(255, 255, 255, 0.05) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important; 
@@ -1786,14 +1809,12 @@ ytmusic-card-shelf-renderer .yt-spec-button-shape-next--tonal {
     transition: all 0.2s ease !important;
 }
 
-/* Force text and icons inside the previously-white Play button to be white */
 ytmusic-top-result-item-renderer .yt-spec-button-shape-next--filled *,
 ytmusic-card-shelf-renderer .yt-spec-button-shape-next--filled * {
     color: #ffffff !important;
     fill: #ffffff !important;
 }
 
-/* Button Hover States */
 ytmusic-top-result-item-renderer .yt-spec-button-shape-next--filled:hover,
 ytmusic-card-shelf-renderer .yt-spec-button-shape-next--filled:hover {
     background: rgba(255, 255, 255, 0.25) !important;
@@ -1805,3 +1826,4 @@ ytmusic-card-shelf-renderer .yt-spec-button-shape-next--outline:hover,
 ytmusic-card-shelf-renderer .yt-spec-button-shape-next--tonal:hover {
     background: rgba(255, 255, 255, 0.15) !important;
 }
+
