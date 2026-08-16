@@ -4,7 +4,7 @@ A minimal theme that adds numerous improvements whilst keeping the original YTM 
 
 - Fixed search suggestions box
 - Fixed search results card
-- Updated Toast Notifications
+- Updated toast notifications
   
 ## Features
 
