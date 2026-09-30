@@ -1,10 +1,10 @@
 A minimal theme that adds numerous improvements whilst keeping the original YTM feel.
 
-## v1.2.2 Update
+## v1.3.0 Update
 
-- Fixed Better Lyrics v2.4.0 Compatibility
-- Reduced vertical gap between main and background Lyricss
-- Auto hide fullscreen player controls when player bar is shown
+- Karaoke mode fix
+- M/V mode improvements
+- bug fixes
   
 ## Features
 
