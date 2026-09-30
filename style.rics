@@ -1090,30 +1090,30 @@ ytmusic-player-page:not([video-mode]):not([player-fullscreened]):not([blyrics-df
 }
 
 /* VIDEO TAB MODE (Native YouTube Music) */
-ytmusic-player-page[video-mode][player-fullscreened]:not([blyrics-dfs]) #player.ytmusic-player-page { 
+ytmusic-player-page[video-mode][player-fullscreened]:not([blyrics-dfs], [blyrics-karaoke]) #player.ytmusic-player-page { 
   height: auto !important; 
-  width: 60vw !important; 
-  min-width: 60vw !important; 
-  max-width: 60vw !important; 
+  width: min(60vw, calc((100vh - 18rem) * var(--blyrics-video-aspect-ratio))) !important; 
+  min-width: min(60vw, calc((100vh - 18rem) * var(--blyrics-video-aspect-ratio))) !important; 
+  max-width: min(60vw, calc((100vh - 18rem) * var(--blyrics-video-aspect-ratio))) !important; 
   flex-shrink: 0 !important; 
-  aspect-ratio: 1.7778 !important;
+  aspect-ratio: var(--blyrics-video-aspect-ratio) !important;
   border-radius: 12px !important; 
   margin-top: 7vh !important; 
 }
 
-ytmusic-player-page[video-mode][player-fullscreened]:not([blyrics-dfs]) #main-panel.ytmusic-player-page { 
+ytmusic-player-page[video-mode][player-fullscreened]:not([blyrics-dfs], [blyrics-karaoke]) #main-panel.ytmusic-player-page { 
   padding-right: 0vw !important; 
 }
 
-ytmusic-player-page[video-mode][player-fullscreened]:not([blyrics-dfs]) #side-panel.ytmusic-player-page { 
+ytmusic-player-page[video-mode][player-fullscreened]:not([blyrics-dfs], [blyrics-karaoke]) #side-panel.ytmusic-player-page { 
   margin-top: 5vh !important; 
 }
 
-ytmusic-player-page[player-fullscreened][blyrics-video-mode]:not([blyrics-dfs]) #main-panel.ytmusic-player-page { 
+ytmusic-player-page[player-fullscreened][blyrics-video-mode]:not([blyrics-dfs], [blyrics-karaoke]) #main-panel.ytmusic-player-page { 
   padding-right: var(--lucid-video-tab-gap) !important; 
 }
 
-ytmusic-player-page[player-fullscreened][blyrics-video-mode]:not([blyrics-dfs]):has(.blyrics-container[data-no-lyrics="true"]) #main-panel { 
+ytmusic-player-page[player-fullscreened][blyrics-video-mode]:not([blyrics-dfs], [blyrics-karaoke]):has(.blyrics-container[data-no-lyrics="true"]) #main-panel { 
   transform: translateX(var(--lucid-video-tab-center)) !important; 
   transition-delay: 1.4s !important; 
 }
