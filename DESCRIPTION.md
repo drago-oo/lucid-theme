@@ -4,6 +4,7 @@ A minimal theme that adds numerous improvements whilst keeping the original YTM 
 
 - Karaoke mode fix
 - M/V mode improvements
+- Updated Better Lyrics Shaders preset
 - bug fixes
   
 ## Features
